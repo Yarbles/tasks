@@ -24,7 +24,11 @@ class Task
     }
     static function getAll()
     {
-        return $_SESSION['list_of_tasks']; 
+        return $_SESSION['list_of_tasks'];
     }
+    static function deleteAll()
+    {
+        $_SESSION['list_of_tasks'] = array();
+    }    
 }
 ?>
