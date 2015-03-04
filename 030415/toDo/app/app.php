@@ -9,8 +9,6 @@
 
     $app = new Silex\Application();
 
-
-
     $app->get("/", function() {
 
 
@@ -45,7 +43,7 @@
         });
 
     $app->post("/tasks", function() {
-        $task = new Task($_POST['desciption']);
+        $task = new Task($_POST['description']);
         $task->save();
         return "
             <h1>You created a task!<h1>
@@ -53,7 +51,7 @@
             <p><a href='/'>View your list of things to do.</a><p>
         ";
         });
-    }
+
     return $app;
 
 ?>
