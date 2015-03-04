@@ -8,7 +8,7 @@
     {% if tasks is not empty %}
         <p>Here are all your tasks:</p>
         <ul>
-            {% for task in tasksd %}
+            {% for task in tasks %}
                 <li>{{ task.getDescription }}</li>
                 {% endfor %}
         </ul>

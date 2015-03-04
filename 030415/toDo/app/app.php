@@ -28,8 +28,8 @@
 
         Task::deleteAll();
 
-        return $app['twig']->render('delete_task.php')
-        });
+        return $app['twig']->render('delete_task.php');
+    });
 
     return $app;
 
