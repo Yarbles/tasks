@@ -16,10 +16,11 @@
     $app->get("/", function() use ($app) {
 
         return $app['twig']->render('tasks.php', array('tasks' =>Task::getAll()));
+
     });
 
     $app->post("/tasks", function() use ($app){
-        $task = new Task($_POST['description']);
+        $task = new Task($_POST['description'], $_POST['time_remain']);
         $task->save();
         return $app['twig']->render('create_task.php', array('newtask' => $task));
     });
@@ -30,6 +31,9 @@
 
         return $app['twig']->render('delete_task.php');
     });
+
+
+
 
     return $app;
 
